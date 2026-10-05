@@ -1,0 +1,10 @@
+# Operációs rendszer által generált felesleges fájlok
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Fejlesztői környezet beállításai (ha VS Code-ot használtok)
+.vscode/
+
+# Ideiglenes log fájlok
+*.log
