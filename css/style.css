@@ -1,0 +1,26 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.logo {
+    color: #111;
+    font-size: larger;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+header ul, footer ul {
+    list-style: none;
+}
+
+header nav a, footer nav a{
+    color: #111;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding-bottom: 6px;
+    border-bottom: 3px solid transparent;
+}
+
+header nav a.active, header nav a:hover {
+    border-bottom-color: #111;
+}
