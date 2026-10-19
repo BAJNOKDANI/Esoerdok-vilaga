@@ -34,22 +34,36 @@ header nav a:hover {
 }
 
 .hero {
-    background-image: url(../img/hero-bg.webp);
-    padding: 10%;
-    color: #fff;
+    width: 100%;
+    min-height: 60vh;
+    background: url("../img/hero-bg.webp") center / cover no-repeat;
+    display: flex;
+    align-items: center;
 }
 
 .hero .col-lg-6 {
-    background-color: rgba(58, 56, 56, 0.6);
-    border: 1px solid black;
-    padding: 3%;
+    padding: 32px 40px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 10px;
+    color: #fff;
 }
 
-.cards svg, .paw{
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin: 0;
+}
+
+.cards svg,
+.paw {
     height: 30px;
 }
 
-.card{
+.card {
     height: 250px;
 }
 
@@ -74,7 +88,8 @@ header nav a:hover {
     color: #555;
     font-size: 18px;
 }
+
 .btn-dark a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }

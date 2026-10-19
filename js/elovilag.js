@@ -84,3 +84,41 @@ const animals = [
         image: "../img/bromelia.jpg"
     }
 ]
+
+const cardsContainer = document.querySelector(".cards");
+const filterLinks = document.querySelectorAll(".allatLista .nav-link");
+
+for (const link of filterLinks) {
+    link.addEventListener("click", function () {
+        for (const l of filterLinks) {
+            l.classList.remove("active");
+        }
+        link.classList.add("active");
+
+        filterCards(link.textContent.trim());
+    });
+}
+
+function filterCards(filter) {
+    let html = "";
+
+    for (const item of animals) {
+        if (filter === "Mind" || item.faj === filter) {
+            html += `
+                <div class="card" style="width: 18rem;">
+                    <img src="${item.image}" class="card-img-top" alt="${item.animal}" title="${item.animal}">
+                    <div class="card-body">
+                        <h5 class="card-title">${item.animal}</h5>
+                        <p class="card-text">${item.description}</p>
+                        <a href="#" class="btn btn-primary">Megnézem →</a>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    cardsContainer.innerHTML = html;
+}
+
+
+filterCards("Mind");
