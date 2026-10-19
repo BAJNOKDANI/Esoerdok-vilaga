@@ -22,8 +22,9 @@ body {
 
 body {
     margin: 0;
-    font-family: "Inter", sans-serif;
-    background: #fbfaf7;
+    background:
+        radial-gradient(circle at top, rgba(45, 106, 79, .08), transparent 40%),
+        linear-gradient(180deg, #fbfaf7 0%, var(--cream) 100%);
     color: var(--text);
 }
 
@@ -63,8 +64,19 @@ header nav a:hover {
     overflow: hidden;
     border-radius: 0 0 30px 30px;
     min-height: 260px;
-    background: var(--green-900);
-    color: white;
+    background: url("../img/hero-bg.webp") center/cover no-repeat;
+    padding: 10%;
+    padding-bottom: calc(10% + 30px);
+    color: #fff;
+}
+
+.hero h1 {
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hero .subtitle {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .hero::after {
@@ -73,7 +85,7 @@ header nav a:hover {
     inset: auto -10% -55% auto;
     width: 340px;
     height: 340px;
-    background: rgba(255, 255, 255, .06);
+    background: radial-gradient(circle, rgba(255, 255, 255, .10), transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -81,7 +93,7 @@ header nav a:hover {
 .hero-content {
     position: relative;
     z-index: 1;
-    padding: 4.25rem 0;
+    padding: 3rem 0 2rem;
 }
 
 .subtitle {
@@ -273,45 +285,4 @@ footer {
 footer a {
     color: #fff;
     text-decoration: none;
-}
-
-@media (max-width: 991.98px) {
-    .hero {
-        min-height: 220px;
-    }
-
-    .hero-content {
-        padding: 3rem 0 2rem;
-    }
-
-    .map-panel {
-        min-height: 360px;
-    }
-}
-
-@media (max-width: 767.98px) {
-
-    header .container,
-    footer .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    nav ul {
-        gap: 1rem !important;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .section-wrap {
-        padding: 2.5rem 0;
-    }
-
-    .map-panel {
-        min-height: 280px;
-    }
 }
