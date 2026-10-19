@@ -7,6 +7,7 @@
     <title>Esőerdők világa | Térkép</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="../css/terkep.css" />
 </head>
 
@@ -48,7 +49,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-8">
                         <span class="badge rounded-pill px-3 py-2 mb-3"
-                            style="background: var(--green-100); color: var(--green-800); border: 1px solid rgba(45,106,79,.10);">Interaktív térkép</span>
+                            style="background: var(--green-100); color: var(--green-800); border: 1px solid rgba(45,106,79,.10);">Interaktív
+                            térkép</span>
                         <h1 class="display-5 fw-bold mb-3">Interaktív térkép</h1>
                         <p class="lead subtitle mb-0">
                             Fedezd fel a világ esőerdőit, és tudj meg többet az egyes régiókról!
@@ -59,7 +61,7 @@
         </header>
 
         <div class="container py-5">
-            <div class="row g-4 align-items-stretch">
+            <div class="row g-4 align-items-stretch" id="terkep">
                 <div class="col-lg-4">
                     <div class="card-soft p-4 h-100">
                         <h2 class="section-title mb-3">A térkép használata</h2>
@@ -67,19 +69,27 @@
                             Kattints a térképen egy esőerdőre, és tudj meg többet az adott terület élővilágáról!
                         </p>
 
-                        <div class="legend-item"><span class="legend-dot sa"></span> Dél-amerikai esőerdők</div>
-                        <div class="legend-item"><span class="legend-dot af"></span> Afrikai esőerdők</div>
-                        <div class="legend-item"><span class="legend-dot as"></span> Ázsiai esőerdők</div>
-                        <div class="legend-item mb-0"><span class="legend-dot oc"></span> Óceániai esőerdők</div>
+                        <div role="group" aria-label="Esőerdő-régiók">
+                            <button type="button" class="legend-item" data-region="amazonas"><span
+                                    class="legend-dot sa"></span> Dél-amerikai esőerdők</button>
+                            <button type="button" class="legend-item" data-region="kongo"><span
+                                    class="legend-dot af"></span> Afrikai esőerdők</button>
+                            <button type="button" class="legend-item" data-region="azsia"><span
+                                    class="legend-dot as"></span> Ázsiai esőerdők</button>
+                            <button type="button" class="legend-item" data-region="ujguinea"><span
+                                    class="legend-dot oc"></span> Óceániai esőerdők</button>
+                        </div>
+
+                        <div class="region-info" id="regionInfo" aria-live="polite">
+                            <p class="small-muted mb-0">Válassz ki egy régiót a térképen vagy a jelmagyarázatban, és itt
+                                megjelennek a részletei.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-8">
                     <div class="map-panel h-100">
-                        <div class="map-controls" aria-hidden="true">
-                            <button type="button">+</button>
-                            <button type="button">−</button>
-                        </div>
+                        <div id="map" role="region" aria-label="Interaktív világtérkép az esőerdőkkel"></div>
                     </div>
                 </div>
             </div>
@@ -88,54 +98,86 @@
         <section class="pb-5">
             <div class="container">
                 <h2 class="section-title mb-4">Főbb esőerdő-régiók</h2>
-
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-3">
                         <article class="region-card">
-                            <div class="region-thumb"></div>
+                            <div class="region-thumb thumb-amazonas" role="img" aria-label="Amazonas tájképe"></div>
                             <div class="region-body">
                                 <h3>Amazonas</h3>
                                 <div class="region-meta">Dél-Amerika</div>
                                 <p class="region-desc">A Föld legnagyobb esőerdeje, hatalmas biodiverzitással.</p>
-                                <a href="#" class="btn-main">Megnézem →</a>
+                                <p class="region-stat"><strong>Terület:</strong> kb. 5,5 millió km²</p>
+                                <a href="#terkep" class="btn-main" data-region="amazonas">Megnézem →</a>
                             </div>
                         </article>
                     </div>
 
                     <div class="col-sm-6 col-xl-3">
                         <article class="region-card">
-                            <div class="region-thumb"></div>
+                            <div class="region-thumb thumb-kongo" role="img" aria-label="Kongó-medence tájképe"></div>
                             <div class="region-body">
                                 <h3>Kongó-medence</h3>
                                 <div class="region-meta">Afrika</div>
                                 <p class="region-desc">A világ második legnagyobb trópusi esőerdeje.</p>
-                                <a href="#" class="btn-main">Megnézem →</a>
+                                <p class="region-stat"><strong>Terület:</strong> kb. 2 millió km²</p>
+                                <a href="#terkep" class="btn-main" data-region="kongo">Megnézem →</a>
                             </div>
                         </article>
                     </div>
 
                     <div class="col-sm-6 col-xl-3">
                         <article class="region-card">
-                            <div class="region-thumb"></div>
+                            <div class="region-thumb thumb-azsia" role="img" aria-label="Délkelet-Ázsia tájképe"></div>
                             <div class="region-body">
                                 <h3>Délkelet-Ázsia</h3>
                                 <div class="region-meta">Ázsia</div>
                                 <p class="region-desc">Változatos szigetek és ősi, különleges erdők.</p>
-                                <a href="#" class="btn-main">Megnézem →</a>
+                                <p class="region-stat"><strong>Terület:</strong> Borneó, Szumátra, Maláj-félsziget</p>
+                                <a href="#terkep" class="btn-main" data-region="azsia">Megnézem →</a>
                             </div>
                         </article>
                     </div>
 
                     <div class="col-sm-6 col-xl-3">
                         <article class="region-card">
-                            <div class="region-thumb"></div>
+                            <div class="region-thumb thumb-ujguinea" role="img" aria-label="Új-Guinea tájképe"></div>
                             <div class="region-body">
                                 <h3>Új-Guinea</h3>
                                 <div class="region-meta">Óceánia</div>
                                 <p class="region-desc">Érintetlen erdők, különleges állat- és növényvilág.</p>
-                                <a href="#" class="btn-main">Megnézem →</a>
+                                <p class="region-stat"><strong>Terület:</strong> a sziget kb. 786 000 km²</p>
+                                <a href="#terkep" class="btn-main" data-region="ujguinea">Megnézem →</a>
                             </div>
                         </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-5">
+            <div class="container">
+                <h2 class="section-title mb-4">Tudtad?</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card-soft fact-card">
+                            <h3>Rengeteg faj egy helyen</h3>
+                            <p>A becslések szerint a szárazföldi állat- és növényfajok több mint fele esőerdőben él,
+                                pedig az erdők a szárazföldek kis részét borítják.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-soft fact-card">
+                            <h3>Az erdő saját esőt csinál</h3>
+                            <p>A fák a leveleiken át nagy mennyiségű vizet párologtatnak. Ez felhőket és csapadékot ad,
+                                amely visszahullik az erdőre.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-soft fact-card">
+                            <h3>Szenet kötnek meg</h3>
+                            <p>Az esőerdők fái szén-dioxidot vonnak ki a levegőből és a törzsükben, gyökereikben
+                                tárolják. Az erdőirtás ezt a készletet engedi vissza a légkörbe.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -172,6 +214,7 @@
     </footer>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../js/terkep.js"></script>
 </body>
 

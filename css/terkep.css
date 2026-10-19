@@ -137,19 +137,19 @@ header nav a:hover {
 }
 
 .legend-dot.sa {
-    background: #2d6a4f;
+    background: #2f9e57;
 }
 
 .legend-dot.af {
-    background: #1f4d37;
+    background: #e8871e;
 }
 
 .legend-dot.as {
-    background: #163b2a;
+    background: #c8325a;
 }
 
 .legend-dot.oc {
-    background: #6b7280;
+    background: #6d4bc2;
 }
 
 .map-panel {
@@ -286,4 +286,176 @@ footer {
 footer a {
     color: #fff;
     text-decoration: none;
+}
+
+.map-panel::after {
+    content: none;
+}
+
+#map {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: #eef2ef;
+    font-family: inherit;
+}
+
+button.legend-item {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    padding: .4rem .6rem;
+    margin: 0 0 .2rem -.6rem;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+button.legend-item:hover {
+    background: var(--green-100);
+}
+
+button.legend-item.active {
+    background: var(--green-100);
+    box-shadow: inset 3px 0 0 var(--green-700);
+}
+
+button.legend-item:focus-visible,
+.btn-ghost-sm:focus-visible {
+    outline: 2px solid var(--green-700);
+    outline-offset: 2px;
+}
+
+.region-info {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+}
+
+.info-head {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.info-continent {
+    color: var(--green-700);
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.info-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    margin: .25rem 0 .5rem;
+}
+
+.info-text {
+    color: #5c6b64;
+    font-size: .93rem;
+    line-height: 1.55;
+}
+
+.info-list {
+    margin: 0 0 1rem;
+    font-size: .9rem;
+}
+
+.info-list dt {
+    font-weight: 700;
+    color: var(--text);
+    margin-top: .6rem;
+}
+
+.info-list dd {
+    margin: .1rem 0 0;
+    color: #5c6b64;
+}
+
+.info-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+}
+
+.info-list li {
+    background: var(--green-100);
+    color: var(--green-800);
+    border-radius: 999px;
+    padding: .15rem .6rem;
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+.btn-ghost-sm {
+    background: #fff;
+    border: 1px solid #d7dfd8;
+    border-radius: 12px;
+    padding: .5rem .9rem;
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.btn-ghost-sm:hover {
+    background: var(--green-100);
+}
+
+.region-thumb::after {
+    content: none;
+}
+
+.region-thumb {
+    background-size: cover;
+    background-position: center;
+}
+
+.thumb-amazonas {
+    background: url("../img/amazonas.jpg") center/cover no-repeat, linear-gradient(135deg, #2d6a4f, #163b2a);
+}
+
+.thumb-kongo {
+    background: url("../img/kongo.jpg") center/cover no-repeat, linear-gradient(135deg, #1f4d37, #0f2c1f);
+}
+
+.thumb-azsia {
+    background: url("../img/delkelet-azsia.jpg") center/cover no-repeat, linear-gradient(135deg, #3b7a57, #163b2a);
+}
+
+.thumb-ujguinea {
+    background: url("../img/uj-guinea.jpg") center/cover no-repeat, linear-gradient(135deg, #6b7280, #374151);
+}
+
+.region-stat {
+    font-size: .85rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.region-stat strong {
+    color: var(--text);
+}
+
+.fact-card {
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.fact-card h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: .5rem;
+}
+
+.fact-card p {
+    margin: 0;
+    color: #5c6b64;
+    font-size: .93rem;
+    line-height: 1.6;
 }
