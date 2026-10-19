@@ -20,6 +20,15 @@ body{
   color: var(--text);
 }
 
+body > header {
+    font-family: var(--bs-body-font-family);
+}
+
+header nav a,
+footer nav a {
+    font-weight: 700;
+}
+
 .navbar{
   background: rgba(255,255,255,.85);
   backdrop-filter: blur(12px);
