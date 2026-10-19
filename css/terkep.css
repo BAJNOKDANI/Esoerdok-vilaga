@@ -1,0 +1,317 @@
+:root {
+    --green-900: #163b2a;
+    --green-800: #1f4d37;
+    --green-700: #2d6a4f;
+    --green-100: #e8f5e9;
+    --cream: #f7f4ee;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #d9e3da;
+    --shadow: 0 12px 30px rgba(22, 59, 42, .10);
+    --radius: 22px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #fbfaf7;
+    color: var(--text);
+}
+
+a {
+    color: inherit;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, .85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
+.logo {
+    color: #111;
+    font-size: larger;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+header nav a,
+footer nav a {
+    font-size: medium;
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    color: #111;
+}
+
+header nav a.active,
+header nav a:hover {
+    border-bottom-color: #111;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 30px 30px;
+    min-height: 260px;
+    background: var(--green-900);
+    color: white;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: auto -10% -55% auto;
+    width: 340px;
+    height: 340px;
+    background: rgba(255, 255, 255, .06);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 4.25rem 0;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, .85);
+    max-width: 720px;
+    font-weight: 500;
+}
+
+.card-soft {
+    background: rgba(255, 255, 255, .88);
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -.03em;
+}
+
+.small-muted {
+    color: var(--muted);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    margin-bottom: .7rem;
+    color: #314039;
+    font-weight: 600;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex: 0 0 12px;
+}
+
+.legend-dot.sa {
+    background: #2d6a4f;
+}
+
+.legend-dot.af {
+    background: #1f4d37;
+}
+
+.legend-dot.as {
+    background: #163b2a;
+}
+
+.legend-dot.oc {
+    background: #6b7280;
+}
+
+.map-panel {
+    min-height: 420px;
+    background: #eef2ef;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.map-panel::after {
+    content: 'Interaktív világtérkép helye';
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: rgba(31, 41, 55, .55);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: .01em;
+}
+
+.map-controls {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    z-index: 2;
+    background: rgba(255, 255, 255, .95);
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .10);
+}
+
+.map-controls button {
+    display: block;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    background: transparent;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #42504a;
+}
+
+.map-controls button+button {
+    border-top: 1px solid rgba(0, 0, 0, .08);
+}
+
+.region-card {
+    background: rgba(255, 255, 255, .88);
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .04);
+    overflow: hidden;
+    height: 100%;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.region-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+    border-color: rgba(45, 106, 79, .25);
+}
+
+.region-thumb {
+    height: 145px;
+    background: #dfe7e1;
+    position: relative;
+    display: grid;
+    place-items: center;
+    color: rgba(31, 41, 55, .45);
+    font-weight: 700;
+}
+
+.region-thumb::after {
+    content: 'Tájkép helye';
+}
+
+.region-body {
+    padding: 1.1rem;
+}
+
+.region-body h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: .2rem;
+}
+
+.region-meta {
+    color: var(--green-700);
+    font-size: .9rem;
+    font-weight: 700;
+    margin-bottom: .65rem;
+}
+
+.region-desc {
+    color: #5c6b64;
+    font-size: .92rem;
+    line-height: 1.55;
+    min-height: 66px;
+}
+
+.btn-main {
+    background: var(--green-800);
+    border: none;
+    color: white;
+    border-radius: 14px;
+    padding: .8rem 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+}
+
+.btn-main:hover {
+    color: white;
+    filter: brightness(1.05);
+}
+
+.section-wrap {
+    padding: 3.5rem 0;
+}
+
+footer {
+    background: linear-gradient(135deg, var(--green-900), #0f2c1f);
+    color: rgba(255, 255, 255, .9);
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 991.98px) {
+    .hero {
+        min-height: 220px;
+    }
+
+    .hero-content {
+        padding: 3rem 0 2rem;
+    }
+
+    .map-panel {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    header .container,
+    footer .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem !important;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .section-wrap {
+        padding: 2.5rem 0;
+    }
+
+    .map-panel {
+        min-height: 280px;
+    }
+}
