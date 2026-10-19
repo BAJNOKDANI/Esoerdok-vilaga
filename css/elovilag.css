@@ -1,44 +1,56 @@
 .hero {
-  width: 100%;
-  background: url("../img/elovilag-bg.jpg") center / cover no-repeat;
-  display: flex;
+    width: 100%;
+    min-height: 60vh;
+    background: url("../img/elovilag-bg.jpg") center / cover no-repeat;
+    display: flex;
+    align-items: center;
 }
 
 .hero .col-lg-6 {
-  padding: 32px 40px;
-  background: rgba(0, 0, 0, 0.55);
-  border-radius: 10px;
-  color: #fff;
+    padding: 32px 40px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 10px;
+    color: #fff;
 }
 
 .hero h1 {
-  font-size: 48px;
-  margin-bottom: 16px;
+    font-size: 48px;
+    margin-bottom: 16px;
 }
 
 .hero p {
-  font-size: 19px;
-  margin: 0;
-}
-.allatLista .nav-link {
-  color: #000;
-  cursor: pointer;
+    font-size: 19px;
+    margin: 0;
 }
 
-.allatLista .nav-link:hover {
-  color: #000;
-  background-color: #e9e9e9;
+.allatLista .nav-link, .card .btn-primary {
+    color: #000;
+    cursor: pointer;
 }
 
-.allatLista .nav-link.active {
-  background-color: #000;
-  color: #fff;
+.allatLista .nav-link:hover{
+    color: #000;
+    background-color: #e9e9e9;
 }
 
-.card{
+.allatLista .nav-link.active, .card .btn-primary   {
+    background-color: #000;
+    color: #fff;
+}
+
+.card .btn-primary  {
+    border: none;
+    margin-bottom: 0;
+}
+
+.card {
     height: 400px;
 }
 
-.card-img-top{
+.card-img-top {
     height: 200px;
+}
+
+.card-text{
+    height: 70px;
 }
