@@ -1,3 +1,15 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background:
+        radial-gradient(circle at top, rgba(45, 106, 79, .08), transparent 40%),
+        linear-gradient(180deg, #fbfaf7 0%, #f7f4ee 100%);
+}
+
+/* Navbar */
 header nav a {
     font-weight: 700;
 }
@@ -93,8 +105,8 @@ header nav a {
 }
 
 .footer-dark {
-    background-color: #212529;
-    color: #fff;
+    background: linear-gradient(135deg, #163b2a, #0f2c1f);
+    color: rgba(255, 255, 255, .9);
 }
 
 .footer-dark .logo {
