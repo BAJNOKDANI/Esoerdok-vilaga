@@ -28,16 +28,6 @@ a {
     color: inherit;
 }
 
-
-
-
-
-
-
-
-
-
-
 .card-soft {
     background: rgba(255, 255, 255, .88);
     border: 1px solid rgba(0, 0, 0, .06);
@@ -144,6 +134,8 @@ a {
     box-shadow: 0 8px 22px rgba(0, 0, 0, .04);
     overflow: hidden;
     height: 100%;
+    display: flex;
+    flex-direction: column;
     transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
@@ -155,6 +147,7 @@ a {
 
 .region-thumb {
     height: 145px;
+    flex-shrink: 0;
     background: #dfe7e1;
     position: relative;
     display: grid;
@@ -169,6 +162,14 @@ a {
 
 .region-body {
     padding: 1.1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.region-body .btn-main {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .region-body h3 {
