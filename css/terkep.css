@@ -15,10 +15,6 @@
     box-sizing: border-box;
 }
 
-html,
-body {
-    height: 100%;
-}
 
 body {
     margin: 0;
@@ -32,76 +28,15 @@ a {
     color: inherit;
 }
 
-.navbar {
-    background: rgba(255, 255, 255, .85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 0, 0, .05);
-}
 
-.logo {
-    color: #111;
-    font-size: larger;
-    font-weight: 700;
-    text-decoration: none;
-}
 
-header nav a,
-footer nav a {
-    font-size: medium;
-    font-weight: 700;
-    padding-bottom: 6px;
-    border-bottom: 2px solid transparent;
-    text-decoration: none;
-    color: #111;
-}
 
-header nav a.active,
-header nav a:hover {
-    border-bottom-color: #111;
-}
 
-.hero {
-    position: relative;
-    overflow: hidden;
-    border-radius: 0 0 30px 30px;
-    min-height: 260px;
-    background: url("../img/hero-bg.webp") center/cover no-repeat;
-    padding: 10%;
-    padding-bottom: calc(10% + 30px);
-    color: #fff;
-}
 
-.hero h1 {
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
 
-.hero .subtitle {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    background-color: rgba(0, 0, 0, 0.6);
-}
 
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: auto -10% -55% auto;
-    width: 340px;
-    height: 340px;
-    background: radial-gradient(circle, rgba(255, 255, 255, .10), transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    padding: 3rem 0 2rem;
-}
 
-.subtitle {
-    color: rgba(255, 255, 255, .85);
-    max-width: 720px;
-    font-weight: 500;
-}
 
 .card-soft {
     background: rgba(255, 255, 255, .88);
@@ -278,15 +213,7 @@ header nav a:hover {
     padding: 3.5rem 0;
 }
 
-footer {
-    background: linear-gradient(135deg, var(--green-900), #0f2c1f);
-    color: rgba(255, 255, 255, .9);
-}
 
-footer a {
-    color: #fff;
-    text-decoration: none;
-}
 
 .map-panel::after {
     content: none;

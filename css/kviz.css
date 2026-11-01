@@ -12,73 +12,17 @@
 }
 
 * { box-sizing: border-box; }
-html, body { height: 100%; }
 body{
-  background:
-    radial-gradient(circle at top, rgba(45,106,79,.08), transparent 40%),
-    linear-gradient(180deg, #fbfaf7 0%, var(--cream) 100%);
   color: var(--text);
 }
 
-body > header {
-    font-family: var(--bs-body-font-family);
-}
 
-header nav a,
-footer nav a {
-    font-weight: 700;
-}
 
-.navbar{
-  background: rgba(255,255,255,.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0,0,0,.05);
-}
 
-.brand-badge{
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--green-700), var(--green-900));
-  display: grid;
-  place-items: center;
-  color: white;
-  font-weight: 800;
-  box-shadow: var(--shadow);
-}
 
-.hero{
-  position: relative;
-  overflow: hidden;
-  border-radius: 0 0 30px 30px;
-  min-height: 260px;
-  background:
-    linear-gradient(90deg, rgba(10,30,20,.80), rgba(10,30,20,.45)),
-    url("img/kviz-hero.jpg") center/cover no-repeat;
-  color: white;
-}
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:auto -10% -55% auto;
-  width: 340px;
-  height: 340px;
-  background: radial-gradient(circle, rgba(255,255,255,.10), transparent 70%);
-  border-radius: 50%;
-  pointer-events:none;
-}
 
-.hero-content{
-  position: relative;
-  z-index: 1;
-  padding: 4.25rem 0;
-}
 
-.subtitle{
-  color: rgba(255,255,255,.85);
-  max-width: 720px;
-}
 
 .card-soft{
   background: rgba(255,255,255,.88);
@@ -166,10 +110,6 @@ footer nav a {
   font-weight: 600;
 }
 
-footer{
-  background: linear-gradient(135deg, var(--green-900), #0f2c1f);
-  color: rgba(255,255,255,.9);
-}
 
 .small-muted{
   color: var(--muted);
@@ -179,14 +119,4 @@ footer{
   border-radius: 18px;
   background: linear-gradient(180deg, #ffffff, #f5fbf6);
   border: 1px solid #dbe7dd;
-}
-
-.hero h1 {
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.hero .subtitle {
-    font-weight: 500;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    background-color: rgba(0, 0, 0, 0.4);
 }

@@ -1,5 +1,13 @@
+:root {
+    --hero-overlay: linear-gradient(90deg, rgba(10, 30, 20, .80), rgba(10, 30, 20, .45));
+}
+
 body {
     font-family: 'Inter', sans-serif;
+    background:
+        radial-gradient(circle at top, rgba(45, 106, 79, .08), transparent 40%) 0 0 / 100% 100vh no-repeat,
+        linear-gradient(180deg, #fbfaf7 0%, #f7f4ee 100%) 0 0 / 100% 100vh no-repeat,
+        #f7f4ee;
 }
 
 .logo {
@@ -22,10 +30,13 @@ footer nav a {
 }
 
 .card-body a,
-header nav a,
-footer nav a {
+header nav a {
     text-decoration: none;
     color: #111;
+}
+
+header nav a {
+    font-weight: 700;
 }
 
 header nav a.active,
@@ -34,28 +45,54 @@ header nav a:hover {
 }
 
 .hero {
-    width: 100%;
-    min-height: 60vh;
-    background: url("../img/hero-bg.webp") center / cover no-repeat;
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
+    min-height: 60vh;
+    border-radius: 0 0 30px 30px;
+    color: #fff;
+    background-color: #444;
+    background-image: var(--hero-overlay), url("../img/hero-bg.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.hero .col-lg-6 {
-    padding: 32px 40px;
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 10px;
-    color: #fff;
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: auto -10% -55% auto;
+    width: 340px;
+    height: 340px;
+    background: radial-gradient(circle, rgba(255, 255, 255, .10), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 4.25rem;
+    padding-bottom: 4.25rem;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 16px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.hero p {
-    font-size: 19px;
-    margin: 0;
+.hero .subtitle {
+    max-width: 720px;
+    color: rgba(255, 255, 255, .85);
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-badge {
+    background: #e8f5e9;
+    color: #1f4d37;
+    border: 1px solid rgba(45, 106, 79, .10);
 }
 
 .cards svg,
@@ -90,6 +127,17 @@ header nav a:hover {
 }
 
 .btn-dark a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer {
+    background: linear-gradient(135deg, #163b2a, #0f2c1f);
+    color: rgba(255, 255, 255, .9);
+}
+
+footer .logo,
+footer nav a {
     color: #fff;
     text-decoration: none;
 }
