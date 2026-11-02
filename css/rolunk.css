@@ -1,0 +1,80 @@
+.project h2,
+.team h2,
+.sources h2 {
+    color: #222;
+}
+ 
+.project p {
+    color: #555;
+    font-size: 17px;
+}
+ 
+.img-placeholder {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #e4e4e4;
+}
+ 
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+.member-card {
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, .06);
+}
+ 
+.avatar {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #e8f5e9;
+}
+ 
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+.member-card p {
+    color: #666;
+    font-size: 14px;
+}
+ 
+.github {
+    color: #111;
+}
+ 
+.github:hover {
+    color: #2d6a4f;
+}
+ 
+.sources ul {
+    padding-left: 20px;
+}
+ 
+.sources li {
+    margin-bottom: 8px;
+}
+ 
+.sources a {
+    color: #333;
+}
+ 
+.sources a:hover {
+    color: #2d6a4f;
+}
+ 
+@media (max-width: 767px) {
+    .img-placeholder {
+        height: 220px;
+    }
+}
